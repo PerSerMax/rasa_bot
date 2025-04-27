@@ -1,91 +1,156 @@
 version: "3.1"
 
 nlu:
-- intent: greet
-  examples: |
-    - hey
-    - hello
-    - hi
-    - hello there
-    - good morning
-    - good evening
-    - moin
-    - hey there
-    - let's go
-    - hey dude
-    - goodmorning
-    - goodevening
-    - good afternoon
+  - intent: greet
+    examples: |
+      - привет
+      - здравствуй
+      - приветик
+      - доброе утро
+      - добрый вечер
+      - приветствую
+      - здорово
+      - поехали
+      - чувак привет
+      - доброе утро
+      - добрый вечер
+      - добрый день
+      - йоу
+      - хай
+      - здаров
+      - даров
+      - приветули
+      - как сам
 
-- intent: goodbye
-  examples: |
-    - cu
-    - good by
-    - cee you later
-    - good night
-    - bye
-    - goodbye
-    - have a nice day
-    - see you around
-    - bye bye
-    - see you later
+  - intent: goodbye
+    examples: |
+      - пока
+      - увидимся позже
+      - спокойной ночи
+      - до свидания
+      - всего хорошего
+      - хорошего дня
+      - ещё увидимся
+      - пока-пока
+      - до скорого
 
-- intent: affirm
-  examples: |
-    - yes
-    - y
-    - indeed
-    - of course
-    - that sounds good
-    - correct
+  - intent: affirm
+    examples: |
+      - да
+      - ага
+      - конечно
+      - точно
+      - согласен
+      - верно
+      - именно
+      - несомненно
+      - безусловно
+      - естественно
+      - без вопросов
+      - так точно
+      - угу
+      - давай
+      - окей
+      - ладно
 
-- intent: deny
-  examples: |
-    - no
-    - n
-    - never
-    - I don't think so
-    - don't like that
-    - no way
-    - not really
+  - intent: deny
+    examples: |
+      - нет
+      - неа
+      - никогда
+      - не думаю
+      - мне это не нравится
+      - ни за что
+      - не совсем
+      - даже не думай
+      - вряд ли
+      - отрицательно
+      - не-а
+      - нетушки
+      - фигушки
+      - неа, не надо
+      - не в этот раз
 
-- intent: mood_great
-  examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
+  - intent: mood_great
+    examples: |
+      - идеально
+      - отлично
+      - потрясающе
+      - чувствую себя королём
+      - замечательно
+      - я чувствую себя прекрасно
+      - я великолепен
+      - я просто потрясающий
+      - я спасу мир
+      - супер воодушевлён
+      - невероятно хорошо
+      - так идеально
+      - так хорошо
+      - так прекрасно
 
-- intent: mood_unhappy
-  examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
+  - intent: mood_unhappy
+    examples: |
+      - мой день был ужасным
+      - мне грустно
+      - я плохо себя чувствую
+      - я разочарован
+      - очень грустно
+      - мне так грустно
+      - грусть
+      - очень печально
+      - несчастлив
+      - нехорошо
+      - не очень хорошо
+      - невероятно грустно
+      - так грустнооо
+      - так грустно
 
-- intent: bot_challenge
-  examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
+  - intent: bot_challenge
+    examples: |
+      - ты бот?
+      - ты человек?
+      - я говорю с ботом?
+      - я говорю с человеком?
+      - это чат-бот?
+      - это живой человек?
+      - ты ИИ?
+      - ты настоящий?
+      - ты программа?
+      - со мной общается робот?
+      - на той стороне человек?
+      - ты живой?
+      - ты искусственный интеллект?
+      - ты просто алгоритм?
+
+  - intent: ask_time
+    examples: |
+      - сколько времени?
+      - который час?
+      - текущее время
+      - какое сейчас время?
+      - время москва
+      - сколько времени в [Лондоне](city)?
+      - время в [Нью-Йорке](city)
+
+  - intent: ask_date
+    examples: |
+      - какой сегодня день?
+      - дата
+      - сегодня
+      - когда сегодня?
+      - какой сегодня год?
+      - год
+      - когда сейчас?
+      - какой сегодня месяц?
+      - месяц
+
+  - intent: ask_temperature
+    examples: |
+      - какая погода?
+      - погода
+      - тепло?
+      - холодно?
+      - теплый?
+      - холодный?
+      - сколько градусов?
+      - какая температура?
