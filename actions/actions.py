@@ -16,6 +16,7 @@ def get_current_temperature(city: str, api_key: str) -> float:
     try:
         response = requests.get(base_url, params=params)
         data = response.json()
+        print(data)
         return data['main']['temp']
     except Exception as e:
         print(f"Ошибка при получении температуры: {e}")
@@ -65,11 +66,21 @@ class ActionGetTemperature(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
+        city = tracker.latest_message['entities']
+        print(city)
+        for entity in city:
+            if entity['entity'] == 'city':
+                city_name = entity['value']
+                print(city_name)
+                break
         try:
-            current_temperature = get_current_temperature("Москва", api_key)
-            dispatcher.utter_message(text=f"Температура сейчас {current_temperature} градусов")
+            current_temperature = get_current_temperature(city_name, api_key)
+            print(current_temperature)
+            dispatcher.utter_message(text=f"The temperature in {city_name} is currently {current_temperature} degrees.")
         except Exception as e:
-            dispatcher.utter_message(text="Извините, не могу определить температуру")
+            dispatcher.utter_message(text="Sorry, I can't determine the temperature.")
             print(f"Error: {e}")
 
         return []
+
+
