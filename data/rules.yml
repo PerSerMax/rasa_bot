@@ -25,3 +25,9 @@ rules:
     steps:
       - intent: ask_temperature
       - action: action_get_temperature
+
+  - rule: Ответ на любимую тему
+    steps:
+      - intent: ask_favorite_topic
+      - action: action_tell_favorite_topic
+  

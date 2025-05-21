@@ -11,6 +11,10 @@ intents:
   - ask_time
   - ask_date
   - ask_temperature
+  - tell_name
+  - tell_favorite_topic
+  - ask_favorite_topic
+
 
 responses:
   utter_greet:
@@ -36,34 +40,27 @@ actions:
   - action_get_time
   - action_get_date
   - action_get_temperature
+  - action_save_user_memory
+  - action_load_user_memory
+  - action_tell_favorite_topic
 
 entities:
   - city
-
-entity_synonyms:
-  city_synonyms:
-    Москва:
-      - Москва
-      - москвы
-      - Москве
-      - Москву
-      - о Москве
-      - на Москве
-      - к Москве
-    Санкт-Петербург:
-      - Санкт-Петербург
-      - Санкт-Петербурга
-      - Санкт-Петербурге
-      - Санкт-Петербургу
-      - о Санкт-Петербурге
-      - на Санкт-Петербурге
-      - к Санкт-Петербургу
+  - name
+  - favorite_topic
 
 slots:
-  city:
+  name:
     type: text
     mappings:
-      - type: from_text
+    - type: from_entity
+      entity: name
+
+  favorite_topic:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: favorite_topic
 
 session_config:
   session_expiration_time: 60
